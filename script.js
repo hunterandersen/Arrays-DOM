@@ -10,14 +10,14 @@ const users = [
     name: "Violet Parr",
     powerLevel: 9,
     age: 14,
-    favColor: "black",
+    favColor: "violet",
     superName: null
   },
   {
     name: "Bob Parr",
     powerLevel: 6,
     age: 40,
-    favColor: "yellow",
+    favColor: "orange",
     superName: "Mr. Incredible"
   },
   {
@@ -31,10 +31,14 @@ const users = [
     name: "Lucius Best",
     powerLevel: 6,
     age: 40,
-    favColor: "blue",
+    favColor: "lightblue",
     superName: "Frozone"
   }
 ];
+
+//Filter method
+//Only show the super heros with a powerLevel of 7 or greater
+//Creating a new array somehow to plug in down below
 
 
 function renderCardsData(data){
@@ -47,6 +51,7 @@ function renderCardsData(data){
         const cardHeader = document.createElement("h2");
         cardHeader.textContent = `${user.name}`;
         superCard.appendChild(cardHeader);
+        superCard.style.backgroundColor = user.favColor;
         
         Object.entries(user).forEach((entry) => {
             if (entry[1]){
@@ -56,9 +61,11 @@ function renderCardsData(data){
             }
         });
 
+
         placeholder.appendChild(superCard);
     });
     
 }
 
+//Changing this variable
 renderCardsData(users);
